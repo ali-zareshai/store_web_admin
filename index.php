@@ -1,2 +1,2 @@
 <?php
-require "header/index.php";
+header("location:header/login/index.php");
