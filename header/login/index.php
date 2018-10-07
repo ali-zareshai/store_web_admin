@@ -10,7 +10,7 @@ if (isset($_GET["lang"])){
 
 <head>
   <meta charset="UTF-8">
-  <title>Login</title>
+  <title><?=Config::getConfig("title_login") ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
   
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
@@ -29,17 +29,17 @@ if (isset($_GET["lang"])){
                 swal("<?= Languege::_("Please type your username and password") ?>");
                 return;
             }
-            if (csrf==""){
-                swal("<?= Languege::_("Please check the the captcha form") ?>");
-                return;
-            }
+            //if (csrf==""){
+            //    swal("<?//= Languege::_("Please check the the captcha form") ?>//");
+            //    return;
+            //}
             $.ajax({
                 type:"POST",
                 url:"checkLogin.php",
                 data:{"user":username,"pass":pass,"captcha":csrf},
                 success:function (data) {
                    if (data.trim()=="ok"){
-                       window.location.href = '../../index.php';
+                       window.location.href = '../index.php';
                    } else {
                        $.notify(data,"warn",{ position:"right bottom" });
                    }

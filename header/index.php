@@ -24,10 +24,10 @@ Security::checkAccess("main");
             cursor: pointer!important;
         }
     </style>
-   <title>CSS MenuMaker</title>
+   <title><?=Config::getConfig("app_name") ?></title>
     <script>
         function replacepage($address) {
-           $("#iframeshow").attr("src",$address);
+           $("#iframeshow").attr("src","../"+$address);
            // alert($address);
         }
     </script>
@@ -42,7 +42,7 @@ Security::checkAccess("main");
           <?php echo MenuPlugin::showListPlugin();?>
       </ul>
    </li>
-   <li><a href='#'><span>About</span></a></li>
+   <li onclick='$("#iframeshow").attr("src","users.php");'><a href='#'><span><?=Languege::_("users") ?></span></a></li>
    <li class='last'><a href='#'><span>Contact</span></a></li>
 </ul>
 </div>

@@ -43,32 +43,35 @@ class Security
     private static function getDepartemnt($page){
         $login=new Login();
         $number=$login->getDepartemnt();
-        $page_info=R::find("departement","page=?",["$page"]);
+//        $page_info=R::find("departement","page=?",["$page"]);
+        $page_info=R::getRow( 'SELECT * FROM `departement` WHERE `page`=?',[ $page ]);
 //        echo "<pre>";
+//        var_dump($page_info["group1"]);
+//        die();
 //        echo $number;die();
 //        var_dump($page_info[1]->group1);die();
         try{
             switch ($number){
                 case 1:
-                    return $page_info[1]->group1;
+                    return $page_info["group1"];
                 case 2:
-                    return $page_info[1]->group2;
+                    return $page_info["group2"];
                 case 3:
-                    return $page_info[1]->group3;
+                    return $page_info["group3"];
                 case 4:
-                    return $page_info[1]->group4;
+                    return $page_info["group4"];
                 case 5:
-                    return $page_info[1]->group5;
+                    return $page_info["group5"];
                 case 6:
-                    return $page_info[1]->group6;
+                    return $page_info["group6"];
                 case 7:
-                    return $page_info[1]->group7;
+                    return $page_info["group7"];
                 case 8:
-                    return $page_info[1]->group8;
+                    return $page_info["group8"];
                 case 9:
-                    return $page_info[1]->group9;
+                    return $page_info["group9"];
                 case 10:
-                    return $page_info[1]->group10;
+                    return $page_info["group10"];
 
             }
         }catch (Exception $exception){

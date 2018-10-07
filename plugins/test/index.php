@@ -28,6 +28,7 @@ $prodect =json_encode($prodect2);
     <link href="public/tabulator.min.css" rel="stylesheet">
     <script type="text/javascript" src="public/tabulator.min.js"></script>
     <script type="text/javascript" src="public/jspdf.min.js"></script>
+    <script type="text/javascript" src="public/notify.min.js"></script>
     <script type="text/javascript" src="public/jspdf.plugin.autotable.js"></script>
     <style>
         .infoImage {
@@ -51,8 +52,8 @@ $prodect =json_encode($prodect2);
         var container = $("<span></span>")
 
         //create and style inputs
-        var start = $("<input type='number' placeholder='Min' min='0' max='100'/>");
-        var end = $("<input type='number' placeholder='Max' min='0' max='100'/>");
+        var start = $("<input type='number' placeholder='Min'/>");
+        var end = $("<input type='number' placeholder='Max'/>");
 
         container.append(start).append(end);
 
@@ -93,21 +94,16 @@ $prodect =json_encode($prodect2);
 
     //custom max min filter function
     function minMaxFilterFunction(headerValue, rowValue, rowData, filterParams){
-        //headerValue - the value of the header filter element
-        //rowValue - the value of the column in this row
-        //rowData - the data for the row being filtered
-        //filterParams - params object passed to the headerFilterFuncParams property
-
         if(rowValue){
             if(headerValue.start != ""){
                 if(headerValue.end != ""){
-                    return rowValue >= headerValue.start && rowValue <= headerValue.end;
+                    return parseInt(rowValue) >= parseInt(headerValue.start) && parseInt(rowValue) <= parseInt(headerValue.end);
                 }else{
-                    return rowValue >= headerValue.start;
+                    return parseInt(rowValue) >= parseInt(headerValue.start);
                 }
             }else{
                 if(headerValue.end != ""){
-                    return rowValue <= headerValue.end;
+                    return parseInt(rowValue) <= parseInt(headerValue.end);
                 }
             }
         }
@@ -121,34 +117,81 @@ $prodect =json_encode($prodect2);
     });
 
     $("#exportpdf").click(function(){
-        $("#example-table").tabulator("download", "pdf", "report.pdf", {
-            orientation:"portrait", //set page orientation to portrait
-            title:"Export Data", //add title to report
-        });
+        // $("#example-table").tabulator("download", "pdf", "report.pdf", {
+        //     orientation:"portrait", //set page orientation to portrait
+        //     title:"Export Data", //add title to report
+        // });
+        var data = $("#example-table").tabulator("getData");
+        console.log(data);
     });
 
     $("#example-table").tabulator({
         height:"80%",
         layout:"fitColumns",
+        responsiveLayout:"hide",
         pagination:"local",
         paginationSize:10,
         movableColumns:true,
         data:tableData, //set initial table data
+        langs:{
+            "de-de":{
+                "pagination":{
+                    "first":"<?= Languege::_("First") ?>", //text for the first page button
+                    "first_title":"<?= Languege::_("First Page") ?>", //tooltip text for the first page button
+                    "last":"<?= Languege::_("Last") ?>",
+                    "last_title":"<?= Languege::_("Last Page") ?>",
+                    "prev":"<?= Languege::_("Prev") ?>",
+                    "prev_title":"<?= Languege::_("Prev Page") ?>",
+                    "next":"<?= Languege::_("Next") ?>",
+                    "next_title":"<?= Languege::_("Next Page") ?>",
+                },
+                "headerFilters":{
+                    "default":"<?= Languege::_("filter column...") ?>", //default header filter placeholder text
+                }
+            }
+        },
         columns:[
             {title:"<?= Languege::_("ID") ?>", field:"id_"},
             {title:"<?= Languege::_("image") ?>", field:"image",width:100, align:"center",formatter:"html",height:100},
             {title:"<?= Languege::_("category") ?>", field:"category", sorter:"number", headerFilter:"input"},
-            {title:"<?= Languege::_("ref") ?>", field:"ref", headerFilter:"input"},
-            {title:"<?= Languege::_("price") ?>", field:"price", headerFilter:"input"},
-            {title:"<?= Languege::_("kharid") ?>", field:"kharid", align:"center", headerFilter:"input"},
-            {title:"<?= Languege::_("available") ?>", field:"available"},
-            {title:"<?= Languege::_("show_price") ?>", field:"show_price", sorter:"number"},
-            {title:"<?= Languege::_("name") ?>", field:"name", align:"center", headerFilter:"input"},
-            {title:"<?= Languege::_("mojodi") ?>", field:"mojodi",width:90, headerFilter:minMaxFilterEditor, headerFilterFunc:minMaxFilterFunction},
-            {title:"<?= Languege::_("update_") ?>", field:"update_"},
-            {title:"<?= Languege::_("combine") ?>", field:"combine", align:"center"},
-            {title:"<?= Languege::_("combine_id") ?>", field:"combine_id", align:"center"},
+            {title:"<?= Languege::_("ref") ?>", field:"ref", headerFilter:"input",editor:"input"},
+            {title:"<?= Languege::_("price") ?>", field:"price", headerFilter:"input",editor:"number"},
+            {title:"<?= Languege::_("kharid") ?>", field:"kharid", align:"center", headerFilter:"input",editor:"number"},
+            {title:"<?= Languege::_("available") ?>", field:"available",editor:"input"},
+            {title:"<?= Languege::_("show_price") ?>", field:"show_price", sorter:"number",editor:"input"},
+            {title:"<?= Languege::_("name") ?>", field:"name", align:"center", headerFilter:"input",editor:"input"},
+            {title:"<?= Languege::_("mojodi") ?>", field:"mojodi",width:90, headerFilter:minMaxFilterEditor, headerFilterFunc:minMaxFilterFunction,editor:"number"},
+            {title:"<?= Languege::_("update_") ?>", field:"update_",editor:"input"},
+            {title:"<?= Languege::_("combine") ?>", field:"combine", align:"center",editor:"input"},
+            {title:"<?= Languege::_("combine_id") ?>", field:"combine_id", align:"center",editor:"input"},
+            {title:"<?= Languege::_("Track Number") ?>", field:"tracknumber", align:"center",editor:"input"},
+            {title:"<?= Languege::_("Description") ?>", field:"des", align:"center",editor:"input"},
         ],
+        cellEdited:function(cell){
+            var value=cell.getValue();
+            var id   =cell.getRow().getData().id_;
+            var field=cell.getField();
+
+            $.ajax({
+                url: "controller/updateFileld.php?action=update",
+                data: {"id":id,"field":field,"value":value},
+                type: "post",
+                success: function(req){
+                    var req=req.trim();
+                    var respone=req.split("#");
+                    var ok=respone[0];
+                    if (ok =="ok"){
+                        $.notify(respone[1],"success",{ position:"right bottom" });
+                    } else {
+                        $.notify(respone[1],"error",{ position:"right bottom" });
+                    }
+                },
+                error: function(){
+                    swal("Ajx Error");
+                }
+            })
+        },
     });
+    // $("table").setLocale("de-de");
 </script>
 </html>
