@@ -24,4 +24,13 @@ switch ($action){
         echo "ok";
 
         break;
+
+    case "new_user":
+        foreach ($_POST as $keu=>$value){
+            $$keu=Security::post($keu);
+        }
+        $pass=md5($pass);
+        R::exec("INSERT INTO `users` (`id`, `name`, `username`, `pass`, `email`, `departemt`, `enable`, `isadmin`, `last_pass`, `last_login`) VALUES (NULL, '$name', '$username', '$pass', '$email', '0', '0', '0', NULL, NULL);");
+        echo R::getInsertID();
+        break;
 }

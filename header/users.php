@@ -22,6 +22,15 @@ $users=R::getAll("SELECT * FROM `users`");
     <link rel="stylesheet" type="text/css" href="pubic/tabulator.min.css">
     <script src="pubic/bootstrap.min.js"></script>
     <script type="text/javascript" src="pubic/notify.min.js"></script>
+    <script type="text/javascript" src="pubic/sweetalert.min.js"></script>
+
+    <style>
+        #user_btnnew{
+            margin-top: 2%;
+            margin-bottom: 1%;
+        }
+    </style>
+
 
 </head>
 <body>
@@ -44,6 +53,44 @@ $users=R::getAll("SELECT * FROM `users`");
     <div class="tab-content">
         <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <div class="col-md-12">
+                <button id="user_btnnew" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><?=Languege::_("new user") ?></button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel"><?=Languege::_("new user") ?></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label"><?=Languege::_("Name") ?>:</label>
+                                        <input type="text" class="form-control" id="user_name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label"><?=Languege::_("Username") ?>:</label>
+                                        <input type="text" class="form-control" id="user_username">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label"><?=Languege::_("Email") ?>:</label>
+                                        <input type="text" class="form-control" id="user_email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label"><?=Languege::_("Password") ?>:</label>
+                                        <input type="text" class="form-control" id="user_pass">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><?=Languege::_("close") ?></button>
+                                <button id="user_save" type="button" class="btn btn-primary"><?=Languege::_("save") ?></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 
                 <div id="users-table"></div>
 
@@ -77,7 +124,7 @@ $users=R::getAll("SELECT * FROM `users`");
             {title:"<?=Languege::_("Email") ?>", field:"email", align:"center"},
             {title:"<?=Languege::_("Depatemnt") ?>", field:"departemt", align:"center",editor:"select", editorParams:{"male":"Male", "female":"Female"}},
             {title:"<?=Languege::_("Enable") ?>", field:"enable",  align:"center",formatter:"tickCross",editor:true},
-            {title:"<?=Languege::_("Admi") ?>", field:"isadmin", align:"center",formatter:"tickCross",editor:true},
+            {title:"<?=Languege::_("Admin") ?>", field:"isadmin", align:"center",formatter:"tickCross",editor:true},
             {title:"<?=Languege::_("Last Login") ?>", field:"last_login", align:"center"},
         ],
         cellEdited:function(cell){
@@ -103,6 +150,25 @@ $users=R::getAll("SELECT * FROM `users`");
                 }
             })
         },
+    });
+
+    $("#user_save").click(function () {
+        var name=$("#user_name").val();
+        var username=$("#user_username").val();
+        var email=$("#user_email").val();
+        var pass=$("#user_pass").val();
+        if (name=="" || username=="" || email=="" || pass==""){
+            swal("<?=Languege::_('please enter data') ?>");
+            return;
+        }
+        $.ajax({
+            type:"POST",
+            url:"users_manager.php?action=new_user",
+            data:{"name":name,"username":username,"email":email,"pass":pass},
+            success:function (msg) {
+                location.reload();
+            }
+        });
     });
 </script>
 </html>
