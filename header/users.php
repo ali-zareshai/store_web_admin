@@ -4,7 +4,49 @@ require_once __DIR__."/../core/MenuPlugin.php";
 
 Security::checkAccess("users");
 
-$users=R::getAll("SELECT * FROM `users`");
+$users     =R::getAll("SELECT * FROM `users`");
+$deparement=R::getAll("SELECT * FROM `departman`");
+$str_dep="{";
+foreach ($deparement as $dep){
+    $str_dep .= "\"".$dep['name']."\":\"".$dep['name']."\",";
+}
+$str_dep .="}";
+
+function checkAccess($page,$group_num,$checked){
+    if ($checked=="1"){
+        $checked="checked=checked";
+    }else{
+        $checked="";
+    }
+    ?>
+    <input name="<?=$page."#".$group_num ?>" type="checkbox" <?=$checked ?> class="form-control check_access" id="<?=$page."#".$group_num ?>">
+<?php
+
+}
+
+if (isset($_POST['access_submit'])){
+    R::exec("UPDATE `departement` SET group1=0 , group2=0 ,group3=0 ,group4=0 ,group5=0 ,group6=0 ,group7=0 ,group8=0 ,group9=0 ,group10=0 ;");
+    foreach ($_POST as $item=>$value){
+        if ($item=="access_submit"){
+            continue;
+        }
+        list($page,$field)=explode("#",$item);
+        $sql="UPDATE `departement` SET $field=1 where `page`='$page' ;";
+        R::exec($sql);
+    }
+    ?>
+    <div class="col-md-6 offset-4" >
+        <div class="alert alert-success"><?=Languege::_("ok") ?></div>
+    </div>
+    <script>
+        setTimeout(function () {
+            $(".alert").slideUp();
+        },4000);
+    </script>
+<?php
+
+}
+
 ?>
 <html>
 <head>
@@ -20,14 +62,23 @@ $users=R::getAll("SELECT * FROM `users`");
     <script src="pubic/tabulator.min.js"></script>
     <link rel="stylesheet" type="text/css" href="pubic/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="pubic/tabulator.min.css">
+    <link rel="stylesheet" type="text/css" href="pubic/font.css">
     <script src="pubic/bootstrap.min.js"></script>
     <script type="text/javascript" src="pubic/notify.min.js"></script>
     <script type="text/javascript" src="pubic/sweetalert.min.js"></script>
 
     <style>
-        #user_btnnew{
+        .btn{
             margin-top: 2%;
             margin-bottom: 1%;
+        }
+
+        .nav-tabs{
+            margin-top: 1%;
+        }
+
+        .table{
+            margin-top: 1%;
         }
     </style>
 
@@ -43,11 +94,11 @@ $users=R::getAll("SELECT * FROM `users`");
             <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><?=Languege::_("Access Policy") ?></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">Messages</a>
+            <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false"><?=Languege::_("Depatemnts") ?></a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Settings</a>
-        </li>
+<!--        <li class="nav-item">-->
+<!--            <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Settings</a>-->
+<!--        </li>-->
     </ul>
 
     <div class="tab-content">
@@ -96,8 +147,77 @@ $users=R::getAll("SELECT * FROM `users`");
 
             </div>
         </div>
-        <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-        <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">...</div>
+        <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="col-md-12">
+                <form method="post" action="">
+                    <input type="submit" name="access_submit" class="btn btn-primary" value="<?=Languege::_("save") ?>">
+                <table class="table table-hover table-bordered table-responsive-md">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th><?=Languege::_("pages") ?></th>
+                        <?php
+                        $pages=R::getAll("SELECT * FROM `departman`;");
+                        foreach ($pages as $page){ ?>
+                            <th><?=$page['name'] ?></th>
+                           <?php
+                        }
+                        ?>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    $access=R::getAll("SELECT * FROM `departement`;");
+                    foreach ($access as $act){ ?>
+                        <tr>
+                            <td><?=Languege::_($act['name']) ?></td>
+                            <td><?php checkAccess($act['page'],"group1",$act['group1']) ?></td>
+                            <td><?php checkAccess($act['page'],"group2",$act['group2']) ?></td>
+                            <td><?php checkAccess($act['page'],"group3",$act['group3']) ?></td>
+                            <td><?php checkAccess($act['page'],"group4",$act['group4']) ?></td>
+                            <td><?php checkAccess($act['page'],"group5",$act['group5']) ?></td>
+                            <td><?php checkAccess($act['page'],"group6",$act['group6']) ?></td>
+                            <td><?php checkAccess($act['page'],"group7",$act['group7']) ?></td>
+                            <td><?php checkAccess($act['page'],"group8",$act['group8']) ?></td>
+                            <td><?php checkAccess($act['page'],"group9",$act['group9']) ?></td>
+                            <td><?php checkAccess($act['page'],"group10",$act['group10']) ?></td>
+
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                    </tbody>
+                </table>
+                </form>
+            </div>
+        </div>
+        <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">
+            <div class="col-md-12">
+                <table class="table table-hover col-md-10 offset-1">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th class="col-md-5"><?=Languege::_("group") ?></th>
+                        <th class="col-md-5"><?=Languege::_("name") ?></th>
+                        <th class="col-md-2"><?=Languege::_("action") ?></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    foreach ($deparement as $group){ ?>
+                        <tr>
+                            <td><?=Languege::_($group['group_code']) ?></td>
+                            <td><input size="50" class="form-control col-md-8 txt_dep" id="<?= $group['group_code'] ?>" value="<?= $group['name'] ?>"></td>
+                            <td><button style="display: none" class="btn btn-success save_dep" id="<?= $group['group_code'] ?>"><?=Languege::_("save") ?></button></button></td>
+                        </tr>
+                       <?php
+                    }
+                    ?>
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
         <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">...</div>
     </div>
 
@@ -109,6 +229,26 @@ $users=R::getAll("SELECT * FROM `users`");
 </div>
 </body>
 <script>
+    $(".save_dep").click(function () {
+        var id=$(this).attr("id");
+        var value = $("input[id="+id+"]").val();
+        $.ajax({
+            type:"POST",
+            url:"users_manager.php?action=departement",
+            data:{"id":id,"val":value},
+            success:function (msg) {
+                if (msg.trim()=="ok"){
+                    swal("<?=Languege::_("ok") ?>");
+                    $("button[id="+id+"]").css("display","none");
+                }
+            },
+        });
+    });
+
+    $(".txt_dep").change(function () {
+        var id = $(this).attr("id");
+        $("button[id="+id+"]").css("display","block");
+    });
     var tableData=<?php echo json_encode($users); ?>;
     $("#users-table").tabulator({
         height:"311px",
@@ -122,7 +262,7 @@ $users=R::getAll("SELECT * FROM `users`");
             {title:"<?=Languege::_("ID") ?>", field:"id"},
             {title:"<?=Languege::_("Name") ?>", field:"name", align:"center"},
             {title:"<?=Languege::_("Email") ?>", field:"email", align:"center"},
-            {title:"<?=Languege::_("Depatemnt") ?>", field:"departemt", align:"center",editor:"select", editorParams:{"male":"Male", "female":"Female"}},
+            {title:"<?=Languege::_("Depatemnt") ?>", field:"departemt", align:"center",editor:"select", editorParams:<?=$str_dep ?>},
             {title:"<?=Languege::_("Enable") ?>", field:"enable",  align:"center",formatter:"tickCross",editor:true},
             {title:"<?=Languege::_("Admin") ?>", field:"isadmin", align:"center",formatter:"tickCross",editor:true},
             {title:"<?=Languege::_("Last Login") ?>", field:"last_login", align:"center"},
@@ -170,5 +310,10 @@ $users=R::getAll("SELECT * FROM `users`");
             }
         });
     });
+
+
+
+
+
 </script>
 </html>

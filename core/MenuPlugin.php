@@ -22,7 +22,7 @@ class MenuPlugin
                 $json=file_get_contents(__DIR__."/../plugins/$val/etc/version.json");
                 $arr=json_decode($json);
                 $addres="plugins/".$val."/index.php";
-                $menu.="<li  onclick=\"replacepage('".$addres. "')\" class='has-sub'><a><span>".$arr->name ."</span></a></li>";
+                $menu.="<li id='".$addres. "'  onclick=\"replacepage('".$addres. "')\" class='has-sub'><a><span>".$arr->name ."</span></a></li>";
             }
         }
         return $menu;

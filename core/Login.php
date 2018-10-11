@@ -49,6 +49,11 @@ class Login
         return (isset($_SESSION['login']))? $_SESSION['login']:false;
     }
 
+    public function getUserName(){
+        $user_info=unserialize($_SESSION['info']);
+        return (!is_null(($user_info->username)))?$user_info->username:null;
+    }
+
     public function isAdmin(){
         $user_info=unserialize($_SESSION['info']);
         if (!is_null($user_info->isadmin) && $user_info->isadmin==1){
@@ -56,6 +61,28 @@ class Login
         }else{
             return false;
         }
+    }
+
+    public function checkCurrentPass($password){
+        $username = $this->getUserName();
+        $user=R::find("users","username=?",["$username"]);
+        $pass_user= $user[1]->pass;
+        if (isset($pass_user)) {
+            if (md5($password) == $pass_user) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function lastLogin(){
+        $user_info=unserialize($_SESSION['info']);
+        return (!is_null(($user_info->last_login)))?$user_info->last_login:null;
+    }
+
+    public function idUser(){
+        $user_info=unserialize($_SESSION['info']);
+        return (!is_null(($user_info->id)))?$user_info->id:null;
     }
 
     public function getDepartemnt(){

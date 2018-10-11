@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'vazir';
-    src: url('/font/vazir.woff2') format('woff')
+    src: url('font/vazir.woff2') format('woff')
 }
 
 *{
-    font-family: 'vazir', sans-serif;
+    font-family: 'vazir', sans-serif !important;
 }

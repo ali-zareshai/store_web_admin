@@ -17,6 +17,7 @@ if (isset($_GET["lang"])){
     <script src="js/api.js"></script>
     <script src="../pubic/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../pubic/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../pubic/font.css">
     <script src="../pubic/bootstrap.min.js"></script>
     <script src="../pubic/sweetalert.min.js"></script>
     <script src="../pubic/notify.min.js"></script>

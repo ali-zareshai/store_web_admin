@@ -18,6 +18,7 @@ class Security
 
 
     public static function checkAccess($page_name){
+//        var_dump(self::getDepartemnt($page_name));die();
         $login=new Login();
         if ($page_name=="login"){
             return true;
@@ -29,7 +30,6 @@ class Security
         if ($login->isAdmin() || $page_name=="main"){
             return true;
         }
-//        var_dump(self::getDepartemnt($page_name));die();
         if (self::getDepartemnt($page_name)==0){
             self::noAccessPage();
         }
@@ -43,7 +43,11 @@ class Security
     private static function getDepartemnt($page){
         $login=new Login();
         $number=$login->getDepartemnt();
-//        $page_info=R::find("departement","page=?",["$page"]);
+        $number=R::getRow( 'SELECT * FROM `departman` WHERE `name`=?',[ $number ]);
+        $number=$number["id"];
+
+
+
         $page_info=R::getRow( 'SELECT * FROM `departement` WHERE `page`=?',[ $page ]);
 //        echo "<pre>";
 //        var_dump($page_info["group1"]);
