@@ -236,3 +236,72 @@
 2018-10-11 14:34:52,::1,username or password is incorect
 2018-10-11 14:34:58,ALI,login success
 2018-10-11 14:44:23,ALI,ALI change password
+2018-10-11 14:48:37,::1,user logout
+2018-10-11 14:48:40,::1,user change langtuage to fa
+2018-10-11 14:48:44,::1,username or password is incorect
+2018-10-11 14:48:51,ALI,login success
+2018-10-11 14:49:52,ALI,Update user departemt =>مدیران ارشد  ID: 1 table:users
+2018-10-11 14:50:20,::1,user logout
+2018-10-11 14:50:23,ALI,login success
+2018-10-11 14:51:17,ALI,Update user isadmin =>0  ID: 1 table:users
+2018-10-11 14:51:27,::1,user logout
+2018-10-11 14:51:29,ALI,login success
+2018-10-11 14:51:30,ALI,Access Denied
+2018-10-11 14:52:03,ALI,Access Denied
+2018-10-11 14:52:27,ALI,Update user isadmin =>0  ID: 2 table:users
+2018-10-11 14:52:29,ALI,Update user isadmin =>0  ID: 3 table:users
+2018-10-11 14:52:32,ALI,Update user isadmin =>0  ID: 4 table:users
+2018-10-11 14:52:35,ALI,Update user isadmin =>1  ID: 1 table:users
+2018-10-11 14:55:54,::1,user logout
+2018-10-11 14:55:57,::1,user change langtuage to en
+2018-10-11 14:55:59,ALI,login success
+2018-10-11 14:58:03,ALI,insert new user: test
+2018-10-11 14:58:24,ALI,Update user departemt =>مهمان  ID: 5 table:users
+2018-10-11 14:58:42,::1,user logout
+2018-10-11 14:58:52,::1,username or password is incorect
+2018-10-11 14:59:00,::1,username or password is incorect
+2018-10-11 14:59:06,::1,username or password is incorect
+2018-10-11 14:59:23,ALI,login success
+2018-10-11 14:59:33,ALI,Update user enable =>1  ID: 5 table:users
+2018-10-11 14:59:37,::1,user logout
+2018-10-11 14:59:54,::1,username or password is incorect
+2018-10-11 15:01:03,::1,username or password is incorect
+2018-10-11 15:01:18,::1,username or password is incorect
+2018-10-11 15:01:25,::1,username or password is incorect
+2018-10-11 15:01:31,::1,username or password is incorect
+2018-10-11 15:01:37,::1,username or password is incorect
+2018-10-11 15:03:33,::1,username or password is incorect
+2018-10-11 15:04:42,::1,username or password is incorect
+2018-10-11 16:43:33,ALI,login success
+2018-10-11 16:43:53,::1,user logout
+2018-10-11 16:44:05,test,login success
+2018-10-11 16:44:11,test,Access Denied
+2018-10-11 16:44:19,test,Access Denied
+2018-10-11 16:44:31,::1,user logout
+2018-10-11 16:44:34,ALI,login success
+2018-10-11 16:47:00,::1,user logout
+2018-10-11 16:47:05,::1,user change langtuage to fa
+2018-10-11 16:47:07,ALI,login success
+2018-10-11 16:47:23,ALI,change config app_name to M
+2018-10-11 17:14:25,::1,user logout
+2018-10-11 17:14:28,ALI,login success
+2018-10-11 18:08:55,ALI,change config app_name to ali zareshahi
+2018-10-11 18:11:00,::1,user logout
+2018-10-11 18:11:05,::1,user change langtuage to en
+2018-10-11 18:11:09,ALI,login success
+2018-10-11 18:11:54,::1,user logout
+2018-10-11 18:11:57,::1,user change langtuage to fa
+2018-10-11 18:12:00,ALI,login success
+2018-10-11 19:20:46,::1,user logout
+2018-10-11 19:24:46,ALI,login success
+2018-10-11 20:10:26,::1,username or password is incorect
+2018-10-11 20:10:48,ALI,login success
+2018-10-11 20:12:58,ALI,user change langtuage to en
+2018-10-11 20:13:52,::1,user change langtuage to en
+2018-10-11 20:13:55,ALI,login success
+2018-10-12 06:23:52,127.0.0.1,user change langtuage to en
+2018-10-12 06:23:57,127.0.0.1,user change langtuage to fa
+2018-10-12 06:24:13,ALI,login success
+2018-10-12 06:25:05,ALI,Update user departemt =>کارآموز  ID: 5 table:users
+2018-10-12 06:26:08,ALI,Change name group: group2
+2018-10-12 06:35:21,ALI,Update Filed show_price =>1.000  ID: 1200033 table:prodect

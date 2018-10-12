@@ -13,16 +13,24 @@ R::setup( 'mysql:host='.$address.';dbname='.$db, $user, $pass );
 class Login
 {
     public function checkPass($username,$pass){
-        $user=R::find("users","username=?",["$username"]);
-        $pass_user= $user[1]->pass;
+        $user2=R::getRow("SELECT * FROM `users` WHERE username='$username';");
+        $user = new stdClass();
+        foreach ($user2 as $key => $value)
+        {
+            $user->$key = $value;
+        }
+//        var_dump($user);
+//        die();
+        $pass_user= $user->pass;
         if (isset($pass_user)){
             if (md5($pass)==$pass_user){
-                $user_info=$user[1];
+                $user_info=$user;
                 $_SESSION['info']=serialize($user_info);
 //                var_dump(self::$user_info);die();
                 if ($user_info->enable==1){
-                    $user[1]->last_login=date("Y-m-d H:i:s");
-                    R::store($user[1]);
+                    $date=$user->last_login=date("Y-m-d H:i:s");
+                    $id  =$user->id;
+                    R::exec("UPDATE `users` SET `last_login` = '$date' WHERE `users`.`id` = $id; ");
                     $_SESSION['login']=true;
                     LogAction::Log("login success");
                     echo "ok";

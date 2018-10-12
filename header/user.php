@@ -50,22 +50,7 @@ function showMsg($msg=null){ ?>
 ?>
 <html>
 <head>
-    <?php
-    echo "<script>";
-    echo file_get_contents(__DIR__."\pubic\jquery-3.3.1.min.js");
-    echo "</script>\n";
-    //    echo "<style>";
-    //    echo file_get_contents(__DIR__."\pubic\style.css");
-    //    echo "</style>";
-    ?>
-    <script src="pubic/jquery-ui.min.js"></script>
-    <script src="pubic/tabulator.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="pubic/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="pubic/tabulator.min.css">
-    <link rel="stylesheet" type="text/css" href="pubic/font.css">
-    <script src="pubic/bootstrap.min.js"></script>
-    <script type="text/javascript" src="pubic/notify.min.js"></script>
-    <script type="text/javascript" src="pubic/sweetalert.min.js"></script>
+    <?php getALLcss(); ?>
     <style>
         .card{
             margin-top: 2%;

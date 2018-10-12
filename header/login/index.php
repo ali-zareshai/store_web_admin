@@ -9,18 +9,12 @@ if (isset($_GET["lang"])){
 <html lang="en" >
 
 <head>
-  <meta charset="UTF-8">
   <title><?=Config::getConfig("title_login") ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
   
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
     <script src="js/api.js"></script>
-    <script src="../pubic/jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../pubic/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../pubic/font.css">
-    <script src="../pubic/bootstrap.min.js"></script>
-    <script src="../pubic/sweetalert.min.js"></script>
-    <script src="../pubic/notify.min.js"></script>
+    <?php getALLcss(); ?>
     <script>
         function loginform() {
             var username=$("#username").val();

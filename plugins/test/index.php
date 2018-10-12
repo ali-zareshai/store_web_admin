@@ -23,25 +23,25 @@ $prodect =json_encode($prodect2);
 ?>
 <html>
 <head>
-    <script type="text/javascript" src="public/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="public/jquery-ui.min.js"></script>
-    <link href="public/tabulator.min.css" rel="stylesheet">
-    <script type="text/javascript" src="public/tabulator.min.js"></script>
-    <script type="text/javascript" src="public/jspdf.min.js"></script>
-    <script type="text/javascript" src="public/notify.min.js"></script>
-    <script type="text/javascript" src="public/jspdf.plugin.autotable.js"></script>
+   <?php getALLcss(); ?>
     <style>
         .infoImage {
             height:95px;
             width:95px;
             cursor:pointer;
         }
+
+        .btn{
+            margin-top: 2%;
+            margin-bottom: 2%;
+            margin-left: 2%;
+        }
     </style>
 </head>
 <body>
 <div>
-    <input type="button" id="exportpdf" value="<?= Languege::_("pdf") ?>">
-    <input type="button" id="exportcsv" value="<?= Languege::_("excel") ?>">
+    <input class="btn btn-info" type="button" id="exportpdf" value="<?= Languege::_("pdf") ?>">
+    <input class="btn btn-info" type="button" id="exportcsv" value="<?= Languege::_("excel") ?>">
 </div>
 <div id="example-table"></div>
 </body>
