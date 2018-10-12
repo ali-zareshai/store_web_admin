@@ -365,3 +365,18 @@
 2018-10-12 14:52:05,ALI,install new Plugin
 2018-10-12 14:52:12,127.0.0.1,user logout
 2018-10-12 14:52:16,ALI,login success
+2018-10-12 15:00:42,ALI,remove plugin test
+2018-10-12 15:01:47,ALI,install new Plugin
+2018-10-12 15:03:54,ALI,remove plugin test
+2018-10-12 15:05:03,ALI,install new Plugin
+2018-10-12 15:12:34,127.0.0.1,user logout
+2018-10-12 15:12:38,ALI,login success
+2018-10-12 15:13:03,ALI,install new Plugin
+2018-10-12 15:13:08,127.0.0.1,user logout
+2018-10-12 15:13:10,ALI,login success
+2018-10-12 15:13:41,ALI,remove plugin test
+2018-10-12 15:14:01,127.0.0.1,user logout
+2018-10-12 15:14:04,ALI,login success
+2018-10-12 15:14:33,ALI,install new Plugin
+2018-10-12 15:14:38,127.0.0.1,user logout
+2018-10-12 15:14:41,ALI,login success

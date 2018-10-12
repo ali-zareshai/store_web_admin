@@ -2,53 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03729ecb-4314-432f-b90a-f05dea7605dd" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/header/manager.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/header/plugin_manager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/.htaccess" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/.env.example" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/app/Console/Commands/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/app/Console/Kernel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/app/Events/Event.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/app/Events/ExampleEvent.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/app/Exceptions/Handler.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/app/Http/Controllers/Controller.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/app/Http/Controllers/ExampleController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/app/Http/Middleware/Authenticate.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/app/Http/Middleware/ExampleMiddleware.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/app/Jobs/ExampleJob.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/app/Jobs/Job.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/app/Listeners/ExampleListener.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/app/Providers/AppServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/app/Providers/AuthServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/app/Providers/EventServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/app/User.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/artisan" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/bootstrap/app.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/database/factories/ModelFactory.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/database/migrations/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/database/seeds/DatabaseSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/phpunit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/resources/views/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/routes/web.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/storage/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/storage/framework/cache/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/storage/framework/views/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/storage/logs/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/tests/ExampleTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/local/tests/TestCase.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/MenuPlugin.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/MenuPlugin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/etc/log.csv" beforeDir="false" afterPath="$PROJECT_DIR$/etc/log.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/header/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/header/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/header/pubic/All_JS_CSS.php" beforeDir="false" afterPath="$PROJECT_DIR$/header/pubic/All_JS_CSS.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/header/pubic/font.css" beforeDir="false" afterPath="$PROJECT_DIR$/header/pubic/font.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lang/lang.php" beforeDir="false" afterPath="$PROJECT_DIR$/lang/lang.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/test/etc/version.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/test/etc/version.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header/plugin_manager.php" beforeDir="false" afterPath="$PROJECT_DIR$/header/plugin_manager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/test/DB.sql" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -89,8 +46,8 @@
       <file leaf-file-name="plugin_manager.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/header/plugin_manager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="48" column="18" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
+            <state relative-caret-position="884">
+              <caret line="52" column="23" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -257,11 +214,6 @@
               <item name="adminPortal" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="lang" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="adminPortal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="adminPortal" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="plugins" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -372,12 +324,12 @@
       <workItem from="1539199161364" duration="2271000" />
       <workItem from="1539239038767" duration="34366000" />
       <workItem from="1539325743021" duration="3364000" />
-      <workItem from="1539337150693" duration="10235000" />
+      <workItem from="1539337150693" duration="11319000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145169000" />
+    <option name="totallyTimeSpent" value="146253000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -750,8 +702,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/header/plugin_manager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="48" column="18" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
+        <state relative-caret-position="884">
+          <caret line="52" column="23" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
         </state>
       </provider>
     </entry>

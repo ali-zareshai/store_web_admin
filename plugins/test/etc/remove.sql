@@ -1,0 +1,1 @@
+DELETE FROM `departement` WHERE `departement`.`page` = 'prodectman';

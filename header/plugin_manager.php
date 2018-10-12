@@ -8,8 +8,11 @@ $action = Security::get("action");
 switch ($action){
     case "deleth":
         $plugin = Security::post('plugin');
+        $dir_sql = __DIR__."/../plugins/$plugin/etc/remove.sql";
+        $quers   =@file_get_contents($dir_sql);
+        @R::exec($quers);
         if (deleteDir(__DIR__."/../plugins/$plugin")){
-            R::exec("DELETE FROM `departement` WHERE `departement`.`page` = $plugin;");
+//            R::exec("DELETE FROM `departement` WHERE `departement`.`page` = $plugin;");
             LogAction::Log("remove plugin $plugin");
             echo "ok";
         }else{
@@ -50,6 +53,7 @@ function configDB($filename){
     if (file_exists($sql_dir)){
         $query=@file_get_contents($sql_dir);
         @R::exec($query);
+        unlink($sql_dir);
         echo "ok";
     }else{
         echo "ok";
