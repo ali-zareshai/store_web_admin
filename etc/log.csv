@@ -305,3 +305,63 @@
 2018-10-12 06:25:05,ALI,Update user departemt =>کارآموز  ID: 5 table:users
 2018-10-12 06:26:08,ALI,Change name group: group2
 2018-10-12 06:35:21,ALI,Update Filed show_price =>1.000  ID: 1200033 table:prodect
+2018-10-12 07:19:42,127.0.0.1,Access Denied
+2018-10-12 07:19:42,127.0.0.1,Access Denied
+2018-10-12 07:19:46,127.0.0.1,Access Denied
+2018-10-12 07:19:47,127.0.0.1,Access Denied
+2018-10-12 07:19:49,127.0.0.1,Access Denied
+2018-10-12 07:19:50,127.0.0.1,Access Denied
+2018-10-12 07:21:35,ALI,login success
+2018-10-12 07:33:12,::1,user logout
+2018-10-12 07:33:23,ALI,login success
+2018-10-12 07:33:26,::1,user logout
+2018-10-12 07:33:31,::1,user change langtuage to en
+2018-10-12 07:33:42,ALI,login success
+2018-10-12 07:46:58,::1,username or password is incorect
+2018-10-12 07:47:05,ALI,login success
+2018-10-12 07:48:05,ALI,Update Filed des =>  ID: 1200653 table:prodect
+2018-10-12 07:49:26,ALI,Update Filed mojodi =>11111  ID: 1200730 table:prodect
+2018-10-12 07:49:30,ALI,Update Filed show_price =>100  ID: 1200653 table:prodect
+2018-10-12 07:49:43,ALI,Update Filed show_price =>155  ID: 1200730 table:prodect
+2018-10-12 07:50:28,ALI,login success
+2018-10-12 07:51:11,ALI,Update Filed price =>5000  ID: 1200058 table:prodect
+2018-10-12 07:51:18,ALI,Update Filed price =>4000  ID: 1200062 table:prodect
+2018-10-12 07:51:36,ALI,Update Filed mojodi =>100  ID: 1200701 table:prodect
+2018-10-12 07:53:17,ALI,login success
+2018-10-12 07:55:02,ALI,Update Filed des =>  ID: 1200024 table:prodect
+2018-10-12 07:59:58,ALI,Update Filed tracknumber =>  ID: 1200768 table:prodect
+2018-10-12 08:00:25,ALI,change config app_name to ali zareshahi44
+2018-10-12 08:02:24,::1,user logout
+2018-10-12 08:02:28,::1,user change langtuage to en
+2018-10-12 08:02:39,ALI,login success
+2018-10-12 08:10:03,127.0.0.1,user change langtuage to en
+2018-10-12 08:10:15,ALI,login success
+2018-10-12 08:10:21,ALI,login success
+2018-10-12 08:10:35,ALI,login success
+2018-10-12 08:10:59,ALI,login success
+2018-10-12 08:11:18,ALI,user change langtuage to fa
+2018-10-12 08:11:53,ALI,user change langtuage to en
+2018-10-12 08:12:05,ALI,login success
+2018-10-12 09:36:34,ALI,login success
+2018-10-12 09:36:50,::1,user logout
+2018-10-12 09:36:53,::1,user change langtuage to en
+2018-10-12 09:37:04,ALI,login success
+2018-10-12 10:03:06,ALI,login success
+2018-10-12 12:42:40,ALI,error in Deleth Plugin test
+2018-10-12 12:45:53,ALI,remove plugin test
+2018-10-12 12:47:46,ALI,remove plugin test
+2018-10-12 12:56:32,127.0.0.1,user logout
+2018-10-12 12:56:37,ALI,login success
+2018-10-12 12:57:25,ALI,remove plugin test
+2018-10-12 12:58:17,127.0.0.1,user logout
+2018-10-12 12:58:22,ALI,login success
+2018-10-12 14:45:49,ALI,install new Plugin
+2018-10-12 14:47:20,ALI,install new Plugin
+2018-10-12 14:48:18,ALI,install new Plugin
+2018-10-12 14:49:04,ALI,install new Plugin
+2018-10-12 14:49:54,ALI,install new Plugin
+2018-10-12 14:51:23,127.0.0.1,user logout
+2018-10-12 14:51:27,ALI,login success
+2018-10-12 14:52:05,ALI,install new Plugin
+2018-10-12 14:52:12,127.0.0.1,user logout
+2018-10-12 14:52:16,ALI,login success

@@ -22,10 +22,23 @@ class MenuPlugin
                 $json=file_get_contents(__DIR__."/../plugins/$val/etc/version.json");
                 $arr=json_decode($json);
                 $addres="plugins/".$val."/index.php";
-                $menu.="<li id='".$addres. "'  onclick=\"replacepage('".$addres. "')\" class='has-sub'><a><span>".$arr->name ."</span></a></li>";
+                $menu.="<li id='".$addres. "'  onclick=\"replacepage('".$addres. "')\" class='has-sub'><a><span>".$arr->page ."</span></a></li>";
             }
         }
         return $menu;
+    }
+
+    public static function listPlugins(){
+        $plugins=array();
+        foreach (self::getListPlugin() as $key=>$val){
+            if (is_dir(__DIR__."/../plugins/$val")){
+                $json=file_get_contents(__DIR__."/../plugins/$val/etc/version.json");
+                $arr=json_decode($json);
+                $arr=(array)$arr;
+                $plugins[]=$arr;
+            }
+        }
+        return$plugins;
     }
 
 }

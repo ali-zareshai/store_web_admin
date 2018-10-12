@@ -15,6 +15,7 @@ function getALLcss()
     echo "<script src=\"{$dir}jspdf.plugin.autotable.js\"></script>";
     echo "<script src=\"{$dir}xlsx.full.min.js\"></script>";
     echo "<script src=\"{$dir}jquery.fancybox.min.jsa\"></script>";
+    echo "<script src=\"{$dir}all.js\"></script>";
 
     //_____________________________________________________________________________
 
@@ -23,6 +24,7 @@ function getALLcss()
     echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"{$dir}font.css\">";
     echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"{$dir}bootstrap.min.css\">";
     echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"{$dir}jquery.fancybox.min.css\">";
+    echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"{$dir}all.css\">";
 
     if (!isset($_SESSION['lang']) || is_null($_SESSION['lang']) || $_SESSION['lang'] == "fa") {
         echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"{$dir}bootstrap.rtl.css\">";

@@ -63,6 +63,7 @@ if (isset($_GET['logout'])){
    </li>
    <li id="users.php" class="ptitle" ><a href='#'><span><?=Languege::_("users") ?></span></a></li>
    <li id="setting.php" class='last ptitle'><a href='#'><span><?=Languege::_("setting") ?></span></a></li>
+   <li id="manager.php" class='last ptitle'><a href='#'><span><?=Languege::_("manager") ?></span></a></li>
    <li style="float: right"  class="has-sub ptitle"><a href="#"><span><?=Languege::_("welcome") ?><br><?=$login->getName()?></span></a>
        <ul>
            <li id="user.php" class="has-sub ptitle"><a href="#"><span><?=Languege::_("setting") ?></span></a> </li>
