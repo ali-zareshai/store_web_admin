@@ -1,10 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?><prestashop xmlns:xlink="http://www.w3.org/1999/xlink">
-<product>
-<id>7</id>
-<reference>demo_12</reference>
-<price>11</price>
-<wholesale_price>777</wholesale_price>
-<weight>5555555</weight>
-<active>1</active>
-</product>
-</prestashop>
+<prestashop><product><id>7</id><reference>demo_12</reference><price>11</price><wholesale_price>777</wholesale_price><weight>66666</weight><active>1</active></product></prestashop>

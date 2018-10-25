@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03729ecb-4314-432f-b90a-f05dea7605dd" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/core/WebService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugins/test/controller/DownData.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugins/test/controller/ajaxMan.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugins/test/icon/refresh-button.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/test/changelog.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/All_One.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/All_One.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/WebService.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/test/controller/WebService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/etc/log.csv" beforeDir="false" afterPath="$PROJECT_DIR$/etc/log.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/header/manager.php" beforeDir="false" afterPath="$PROJECT_DIR$/header/manager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header/pubic/All_JS_CSS.php" beforeDir="false" afterPath="$PROJECT_DIR$/header/pubic/All_JS_CSS.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header/xml_prodect.txt" beforeDir="false" afterPath="$PROJECT_DIR$/header/xml_prodect.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lang/lang.php" beforeDir="false" afterPath="$PROJECT_DIR$/lang/lang.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/test/controller/updateFileld.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/test/controller/updateFileld.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/test/controller/ajaxMan.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/test/controller/ajaxMan.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/test/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/test/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,8 +25,8 @@
       <file leaf-file-name="manager.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/header/manager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+            <state relative-caret-position="187">
+              <caret line="50" column="21" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -35,17 +34,41 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plugins/test/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3043">
-              <caret line="179" selection-start-line="179" selection-end-line="179" />
+            <state relative-caret-position="207">
+              <caret line="211" column="39" lean-forward="true" selection-start-line="211" selection-start-column="39" selection-end-line="211" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="users.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/header/users.php">
+      <file leaf-file-name="changelog.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/plugins/test/changelog.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="31" selection-start-line="1" selection-end-line="4" selection-end-column="31" />
+            <state relative-caret-position="272">
+              <caret line="41" column="40" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="All_JS_CSS.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/header/pubic/All_JS_CSS.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="16" column="46" lean-forward="true" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lang.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lang/lang.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="54" column="21" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -53,8 +76,8 @@
       <file leaf-file-name="ajaxMan.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plugins/test/controller/ajaxMan.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+            <state relative-caret-position="272">
+              <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -62,17 +85,17 @@
       <file leaf-file-name="All_One.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/All_One.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="153">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebService.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/WebService.php">
+      <file leaf-file-name="WebService.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plugins/test/controller/WebService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="81" column="69" selection-start-line="81" selection-start-column="69" selection-end-line="81" selection-end-column="69" />
+            <state relative-caret-position="190">
+              <caret line="66" column="22" lean-forward="true" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -80,8 +103,8 @@
       <file leaf-file-name="DownData.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plugins/test/controller/DownData.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1819">
-              <caret line="107" column="16" selection-start-line="107" selection-start-column="16" selection-end-line="107" selection-end-column="16" />
+            <state relative-caret-position="34">
+              <caret line="2" column="45" lean-forward="true" selection-start-line="2" selection-end-line="2" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -91,15 +114,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
               <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/header/user.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1717">
-              <caret line="101" column="10" selection-start-line="92" selection-start-column="3" selection-end-line="101" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -133,6 +147,11 @@
       <find>act</find>
       <find>active</find>
       <find>$data</find>
+      <find>getCustomers</find>
+      <find>getChangesProdect</find>
+      <find>\</find>
+      <find>tableData</find>
+      <find>price</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -167,22 +186,24 @@
         <option value="$PROJECT_DIR$/header/login/index.php" />
         <option value="$PROJECT_DIR$/header/index.php" />
         <option value="$PROJECT_DIR$/header/pubic/font.css" />
-        <option value="$PROJECT_DIR$/header/pubic/All_JS_CSS.php" />
         <option value="$PROJECT_DIR$/plugins/test/etc/version.json" />
         <option value="$PROJECT_DIR$/core/MenuPlugin.php" />
         <option value="$PROJECT_DIR$/header/plugin_manager.php" />
         <option value="$PROJECT_DIR$/util/Array2xml.php" />
         <option value="$PROJECT_DIR$/header/test.txt" />
         <option value="$PROJECT_DIR$/core/DownData.php" />
-        <option value="$PROJECT_DIR$/lang/lang.php" />
-        <option value="$PROJECT_DIR$/plugins/test/controller/ajaxMan.php" />
-        <option value="$PROJECT_DIR$/core/All_One.php" />
         <option value="$PROJECT_DIR$/core/Array2XML.php" />
-        <option value="$PROJECT_DIR$/plugins/test/index.php" />
         <option value="$PROJECT_DIR$/plugins/test/controller/DownData.php" />
         <option value="$PROJECT_DIR$/plugins/test/controller/updateFileld.php" />
         <option value="$PROJECT_DIR$/header/manager.php" />
         <option value="$PROJECT_DIR$/core/WebService.php" />
+        <option value="$PROJECT_DIR$/core/All_One.php" />
+        <option value="$PROJECT_DIR$/header/pubic/All_JS_CSS.php" />
+        <option value="$PROJECT_DIR$/lang/lang.php" />
+        <option value="$PROJECT_DIR$/plugins/test/index.php" />
+        <option value="$PROJECT_DIR$/plugins/test/controller/WebService.php" />
+        <option value="$PROJECT_DIR$/plugins/test/controller/ajaxMan.php" />
+        <option value="$PROJECT_DIR$/plugins/test/changelog.php" />
       </list>
     </option>
   </component>
@@ -226,6 +247,12 @@
               <item name="adminPortal" type="b2602c69:ProjectViewProjectNode" />
               <item name="adminPortal" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="header" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="adminPortal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adminPortal" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="header" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pubic" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="adminPortal" type="b2602c69:ProjectViewProjectNode" />
@@ -274,15 +301,15 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\adminPortal\plugins\test\controller" />
+      <recent name="C:\wamp64\www\adminPortal\header\pubic" />
+      <recent name="C:\wamp64\www\adminPortal\header" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\adminPortal\plugins\test\icon" />
       <recent name="C:\wamp64\www\adminPortal\header\pubic" />
       <recent name="C:\wamp64\www\adminPortal\plugins\test\public" />
-      <recent name="C:\wamp64\www\adminPortal\header" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\adminPortal\plugins\test\controller" />
-      <recent name="C:\wamp64\www\adminPortal\header\pubic" />
       <recent name="C:\wamp64\www\adminPortal\header" />
     </key>
   </component>
@@ -376,12 +403,12 @@
       <workItem from="1539843326959" duration="5084000" />
       <workItem from="1539939092432" duration="20903000" />
       <workItem from="1540452058993" duration="4926000" />
-      <workItem from="1540463944063" duration="3729000" />
+      <workItem from="1540463944063" duration="15139000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191678000" />
+    <option name="totallyTimeSpent" value="203088000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -456,13 +483,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plugins/test/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -640,13 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/header/pubic/All_JS_CSS.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plugins/test/etc/version.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -676,13 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lang/lang.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="61" column="22" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/header/users.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -697,35 +703,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plugins/test/controller/ajaxMan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/Array2XML.php" />
-    <entry file="file://$PROJECT_DIR$/core/All_One.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plugins/test/controller/DownData.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1819">
-          <caret line="107" column="16" selection-start-line="107" selection-start-column="16" selection-end-line="107" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plugins/test/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3043">
-          <caret line="179" selection-start-line="179" selection-end-line="179" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plugins/test/controller/updateFileld.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -735,15 +713,70 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/header/manager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+        <state relative-caret-position="187">
+          <caret line="50" column="21" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/WebService.php">
+    <entry file="file://$PROJECT_DIR$/plugins/test/controller/DownData.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="81" column="69" selection-start-line="81" selection-start-column="69" selection-end-line="81" selection-end-column="69" />
+        <state relative-caret-position="34">
+          <caret line="2" column="45" lean-forward="true" selection-start-line="2" selection-end-line="2" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/header/pubic/All_JS_CSS.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="46" lean-forward="true" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/All_One.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lang/lang.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="54" column="21" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugins/test/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="211" column="39" lean-forward="true" selection-start-line="211" selection-start-column="39" selection-end-line="211" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugins/test/controller/ajaxMan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugins/test/controller/WebService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="66" column="22" lean-forward="true" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugins/test/changelog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="41" column="40" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

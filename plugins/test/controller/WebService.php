@@ -1,6 +1,6 @@
 <?php
 
-require_once "All_One.php";
+require __DIR__."/../../../core/All_One.php";
 
 class WebService
 {
@@ -16,32 +16,36 @@ class WebService
         $this->url_prodect  =$this->api_url."products?&ws_key=".$this->key_presha;
     }
 
+    public function getAddressProdect(){
+        return $this->url_prodect;
+    }
+
     public function Post_Data($service,array $data=null){
         if ($service=="customer"){
             $Xml     = $this->getCustomers($data);
             $address =  $this->url_customers;
             $put=false;
         }elseif ($service=="prodect"){
-            $Xml     =$this->getChangesProdect();
-            file_put_contents("xml_prodect.txt",$Xml);
-            $address =$this->url_customers;
+//            $Xml     =$this->getChangesProdect();
+//            file_put_contents("xml_prodect.txt",$Xml);
+            $address =$this->url_prodect;
             $put=true;
         }
-//        $Xml = new SimpleXMLElement($Xml);
+
+
+//        $Xml = simplexml_load_string($Xml);
 //        return $Xml;
 //        if (!$this->isXML($Xml)){
 //            die("error in xml");
 //        }
 
-        file_put_contents("xml_prodect.txt",$Xml);
         $ch = curl_init();
         $timeout = 15;
-        curl_setopt($ch, CURLOPT_VERBOSE, 1); // set url to post to
+        curl_setopt($ch, CURLOPT_VERBOSE, true); // set url to post to
         curl_setopt($ch, CURLOPT_URL,$address);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, Array("Content-Type: text/xml"));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_HEADER, false);
+        curl_setopt($ch, CURLOPT_HEADER, true);
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
         if ($put){
             curl_setopt($ch, CURLOPT_PUT, 1);
@@ -58,31 +62,41 @@ class WebService
 
     }
 
+    public function clearChane(){
+        $sql="UPDATE `prodect` SET `need_update` = '0';";
+        R::exec($sql);
+        return "ok";
+    }
+
 
 
     public function getChangesProdect(){
         $sql="SELECT * FROM `prodect` WHERE need_update=1;";
         $changes=R::getAll($sql);
-        return $this->getProdect($changes);
+        return $changes;
+    }
+
+    public function getChangeXml(){
+        return $this->getProdect($this->getChangesProdect());
     }
 
     private function getProdect($prodects){
         $xml=array();
         foreach ($prodects as $prodect){
-            $x="<product>\n";
+            $x="<product>";
             foreach ($prodect as $item=>$value){
                 if (in_array($item,['id_','reference','wholesale_price','price','weight','active'])){
                     $item=str_replace(['id_'],['id'],$item);
-                    $x .= "<$item>".str_replace(',','',$value)."</$item>\n";
+                    $x .= "<$item>".str_replace(',','',$value)."</$item>";
                 }
             }
-            $x .= "</product>\n";
+            $x .= "</product>";
             $xml[] = $x;
         }
-        return "<?xml version=\"1.0\" encoding=\"UTF-8\"?><prestashop>\n".implode("\n",$xml)."</prestashop>";
+        return "<prestashop>".implode("",$xml)."</prestashop>";
     }
 
-    private function getCustomers(array $customers=null){
+    public function getCustomers(array $customers=null){
         $id=$id_default_group=$newsletter_date_add=$ip_registration_newsletter=$last_passwd_gen=$secure_key=$deleted=$passwd=$lastname=$firstname=$email=$note=$id_gender=null;
         $birthday=$newsletter_date_add=$newsletter=$optin=$active=$is_guest=$associations=null;
         foreach ($customers as $key=>$value){

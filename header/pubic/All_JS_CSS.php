@@ -14,7 +14,7 @@ function getALLcss()
     echo "<script src=\"{$dir}jspdf.min.js\"></script>";
     echo "<script src=\"{$dir}jspdf.plugin.autotable.js\"></script>";
     echo "<script src=\"{$dir}xlsx.full.min.js\"></script>";
-    echo "<script src=\"{$dir}jquery.fancybox.min.jsa\"></script>";
+    echo "<script src=\"{$dir}jquery.fancybox.min.js\"></script>";
     echo "<script src=\"{$dir}all.js\"></script>";
 
     //_____________________________________________________________________________

@@ -1,6 +1,7 @@
 <?php
 require __DIR__."/../../core/All_One.php";
 require __DIR__."/../../config/prodect.php";
+require_once __DIR__."/controller/WebService.php";
 Security::checkAccess("test");
 
 
@@ -41,14 +42,34 @@ $prodect =json_encode($prodect2);
                     }
                 });
             });
+
+            $('[data-fancybox]').fancybox({
+                toolbar  : true,
+                smallBtn : true,
+                iframe : {
+                    preload : false
+                }
+            })
+            
+
         });
     </script>
     <style>
+
+        .fancybox-slide--iframe .fancybox-content {
+            width  : 1400px;
+            height : 1000px;
+            max-width  : 80%;
+            max-height : 80%;
+            margin: 0;
+        }
+
         .infoImage {
             height:95px;
             width:95px;
             cursor:pointer;
         }
+
 
         .btn{
             margin-top: 2%;
@@ -62,7 +83,10 @@ $prodect =json_encode($prodect2);
     <div class="card" style="margin-top: 2%">
         <h5 class="card-header"><?= Languege::_("action")?></h5>
         <div class="card-body">
-            <button class="btn btn-primary" id="downdata"><?=Languege::_("Download Data")?><img width="15" height="15" src="icon/refresh-button.png"></button>
+            <button class="btn btn-primary" id="downdata"><?=Languege::_("Download Data")?></button>
+            <a class="btn btn-info" data-fancybox data-type="iframe" data-src="changelog.php" href="javascript:;">
+                <?=Languege::_("sync")?>
+            </a>
         </div>
     </div>
 <div>
@@ -185,13 +209,14 @@ $prodect =json_encode($prodect2);
             {title:"<?= Languege::_("ref") ?>", field:"reference", headerFilter:"input",editor:"input"},
             {title:"<?= Languege::_("price") ?>", field:"wholesale_price", headerFilter:"input",editor:"number"},
             {title:"<?= Languege::_("weight") ?>", field:"weight", headerFilter:"input",editor:"number"},
-            {title:"<?= Languege::_("kharid") ?>", field:"kharid", align:"center", headerFilter:"input",editor:"number"},
+            {title:"<?= Languege::_("kharid") ?>", field:"price", align:"center", headerFilter:"input",editor:"number"},
             {title:"<?= Languege::_("available") ?>", field:"available_for_order",editor:"input"},
             {title:"<?= Languege::_("show_price") ?>", field:"show_price", sorter:"number",editor:"input"},
             {title:"<?= Languege::_("name") ?>", field:"meta_description", align:"center", headerFilter:"input",editor:"input"},
             {title:"<?= Languege::_("mojodi") ?>", field:"mojodi",width:90, headerFilter:minMaxFilterEditor, headerFilterFunc:minMaxFilterFunction,editor:"number"},
             {title:"<?= Languege::_("update_") ?>", field:"update_",editor:"input"},
             {title:"<?= Languege::_("combine") ?>", field:"combine", align:"center",editor:"input"},
+            {title:"<?= Languege::_("active") ?>", field:"active", align:"center",editor:"input"},
             {title:"<?= Languege::_("combine_id") ?>", field:"combine_id", align:"center",editor:"input"},
             {title:"<?= Languege::_("Track Number") ?>", field:"tracknumber", align:"center",editor:"input"},
             {title:"<?= Languege::_("Description") ?>", field:"des", align:"center",editor:"input"},
