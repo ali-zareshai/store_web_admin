@@ -1,0 +1,23 @@
+<prestashop xmlns:xlink="http://www.w3.org/1999/xlink">
+    <customer>
+        <id></id>
+        <id_default_group></id_default_group>
+        <newsletter_date_add></newsletter_date_add>
+        <ip_registration_newsletter></ip_registration_newsletter>
+        <last_passwd_gen></last_passwd_gen>
+        <secure_key></secure_key>
+        <deleted></deleted>
+        <passwd></passwd>
+        <lastname>fffffff</lastname>
+        <firstname>rrrrrr</firstname>
+        <email>ali222@test.com</email>
+        <note></note>
+        <id_gender></id_gender>
+        <birthday></birthday>
+        <newsletter></newsletter>
+        <optin></optin>
+        <active></active>
+        <is_guest></is_guest>
+        <associations></associations>
+    </customer>
+</prestashop>

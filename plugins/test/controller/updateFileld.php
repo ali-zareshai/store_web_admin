@@ -14,6 +14,7 @@ switch ($action){
         R::exec("UPDATE `prodect` SET `$field` = '$value' WHERE `prodect`.`id_` = $id;");
         R::exec("UPDATE `prodect` SET `need_update` = '1' WHERE `prodect`.`id_` = $id;");
         LogAction::Log("Update Filed $field =>$value  ID: $id table:prodect");
+//        echo "UPDATE `prodect` SET `$field` = '$value' WHERE `prodect`.`id_` = $id;";
         echo "ok#". Languege::_("updated success")." ".$id;
         break;
 }

@@ -24,6 +24,25 @@ $prodect =json_encode($prodect2);
 <html>
 <head>
    <?php getALLcss(); ?>
+    <script>
+        $(document).ready(function () {
+            $("#downdata").click(function () {
+                $(this).removeClass("btn-primary");
+                $(this).addClass("btn-warning");
+                $.ajax({
+                    type:"post",
+                    url:"controller/ajaxMan.php?action=down",
+                    success:function (msg) {
+                        if (msg.trim()=="ok"){
+                            $(this).removeClass("btn-warning");
+                            $(this).addClass("btn-primary");
+                            swal("<?=Languege::_("ok")?>", {icon: "success",});
+                        }
+                    }
+                });
+            });
+        });
+    </script>
     <style>
         .infoImage {
             height:95px;
@@ -39,11 +58,19 @@ $prodect =json_encode($prodect2);
     </style>
 </head>
 <body>
+<div class="col-md-12">
+    <div class="card" style="margin-top: 2%">
+        <h5 class="card-header"><?= Languege::_("action")?></h5>
+        <div class="card-body">
+            <button class="btn btn-primary" id="downdata"><?=Languege::_("Download Data")?><img width="15" height="15" src="icon/refresh-button.png"></button>
+        </div>
+    </div>
 <div>
     <input class="btn btn-info" type="button" id="exportpdf" value="<?= Languege::_("pdf") ?>">
     <input class="btn btn-info" type="button" id="exportcsv" value="<?= Languege::_("excel") ?>">
 </div>
 <div id="example-table"></div>
+</div>
 </body>
 <script>
     //custom max min header filter
@@ -150,16 +177,18 @@ $prodect =json_encode($prodect2);
                 }
             }
         },
-        columns:[
+
+    columns:[
             {title:"<?= Languege::_("ID") ?>", field:"id_"},
             {title:"<?= Languege::_("image") ?>", field:"image",width:100, align:"center",formatter:"html",height:100},
             {title:"<?= Languege::_("category") ?>", field:"category", sorter:"number", headerFilter:"input"},
-            {title:"<?= Languege::_("ref") ?>", field:"ref", headerFilter:"input",editor:"input"},
-            {title:"<?= Languege::_("price") ?>", field:"price", headerFilter:"input",editor:"number"},
+            {title:"<?= Languege::_("ref") ?>", field:"reference", headerFilter:"input",editor:"input"},
+            {title:"<?= Languege::_("price") ?>", field:"wholesale_price", headerFilter:"input",editor:"number"},
+            {title:"<?= Languege::_("weight") ?>", field:"weight", headerFilter:"input",editor:"number"},
             {title:"<?= Languege::_("kharid") ?>", field:"kharid", align:"center", headerFilter:"input",editor:"number"},
-            {title:"<?= Languege::_("available") ?>", field:"available",editor:"input"},
+            {title:"<?= Languege::_("available") ?>", field:"available_for_order",editor:"input"},
             {title:"<?= Languege::_("show_price") ?>", field:"show_price", sorter:"number",editor:"input"},
-            {title:"<?= Languege::_("name") ?>", field:"name", align:"center", headerFilter:"input",editor:"input"},
+            {title:"<?= Languege::_("name") ?>", field:"meta_description", align:"center", headerFilter:"input",editor:"input"},
             {title:"<?= Languege::_("mojodi") ?>", field:"mojodi",width:90, headerFilter:minMaxFilterEditor, headerFilterFunc:minMaxFilterFunction,editor:"number"},
             {title:"<?= Languege::_("update_") ?>", field:"update_",editor:"input"},
             {title:"<?= Languege::_("combine") ?>", field:"combine", align:"center",editor:"input"},

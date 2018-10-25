@@ -4,25 +4,33 @@ require_once __DIR__."/../core/MenuPlugin.php";
 
 Security::checkAccess("manager");
 
-//if (isset($_FILES['package'])){
-//    var_dump($_FILES['package']);
-//    echo "jk";
-//    if ($_FILES['type']!="application/x-zip-compressed"){
-//        showMsg("file format not support");
-//    }else{
-//        if (!move_uploaded_file($_FILES['tmp_name'],__DIR__."/../plugins/".$_FILES['name'])){
-//            showMsg("Error in upload file");
-//        }else{
-//            installPackage($_FILES['name']);
-//        }
-//    }
+
+//________________________________________
+$webservice=new WebService();
+echo "<pre>";
+var_dump($webservice->Post_Data("prodect"));
+die();
+//$customer['lastname']="fffffff";
+//$customer['firstname']="rrrrrr";
+//$customer['email']="ali222@test.com";
+$str="ID;Active;Name;Categories;Price tax excluded or Price tax included;Tax rules ID;Wholesale price;On sale;Discount amount;Discount percent;Discount from;Discount to;Reference;Supplier reference;Supplier;Manufacturer;EAN13;UPC;Ecotax;Width;Height;Depth;Weight;Quantity;Minimal quantity;Visibility;Additional shipping cost;Unity;Unit price;Short description;Description;Tags;Meta title;Meta keywords;Meta description;URL rewritten;Text when in stock;Text when backorder allowed;Available for order;Product available date;Product creation date;Show price;Image URLs;Delete existing images;Feature;Available online only;Condition;Customizable;Uploadable files;Text fields;Out of stock;ID / Name of shop;Advanced stock management;Depends On Stock;Warehouse";
+$sra=explode(";",$str);
+$xml ="<prestashop><product>";
+$f="";
+//foreach ($sra as $value){
+//    $f .= "<$value></$value>\n";
 //}
+$xml .= $f ."
+//</prestashop>
+//            </product>";
+echo $xml;
+die();
 
-//function installPackage($filename){
-//
-//}
-
-
+//print $xml;
+$webservice=new WebService();
+//$out  = $webservice->getCustomers($customer);
+file_put_contents("test.txt",trim($out));
+die();
 
 function showMsg($msg=null){ ?>
     <div id="success_msg" class="alert <?= (is_null($msg))? "alert-success": 'alert-danger'?> col-md-6 offset-4">
