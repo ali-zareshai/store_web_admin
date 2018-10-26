@@ -39,6 +39,10 @@ class DownData
         return "ok";
     }
 
+    public function getTotalProdect(){
+        return sizeof($this->getprodectids());
+    }
+
     private function getprodectids(){
         $url=$this->api_url."products?&ws_key=".$this->key_presha."&sort=[id_DESC]&output_format=JSON&display=[id]";
         $data=json_decode($this->execCurl($url));

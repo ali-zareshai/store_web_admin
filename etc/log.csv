@@ -447,3 +447,25 @@
 2018-10-25 15:57:02,ALI,Update Filed price =>182  ID: 10 table:prodect
 2018-10-25 16:09:55,ALI,Update Filed wholesale_price =>888  ID: 11 table:prodect
 2018-10-25 16:09:59,ALI,Update Filed weight =>888  ID: 11 table:prodect
+2018-10-25 16:15:21,ALI,change config url_api to https://kavirelectronic.ir/demo/api/
+2018-10-25 16:15:34,ALI,change config presh_key_api to 7WA6FSM6WX9A5DBNTRBB4VD8FJKXV5P9
+2018-10-25 16:20:47,ALI,Update Filed price =>100  ID: 1200769 table:prodect
+2018-10-25 16:22:38,ALI,Update Filed price =>999  ID: 1200769 table:prodect
+2018-10-26 08:22:24,ALI,login success
+2018-10-26 08:32:35,ALI,change config url_api to http://localhost/shop_test/api/
+2018-10-26 08:32:59,ALI,change config presh_key_api to 616VK3DVWBRFXYTI7TVVQX87LM88YKV1
+2018-10-26 08:34:00,ALI,Update Filed wholesale_price =>999  ID: 11 table:prodect
+2018-10-26 08:34:03,ALI,Update Filed weight =>999  ID: 11 table:prodect
+2018-10-26 09:43:30,::1,Access Denied
+2018-10-26 10:37:25,ALI,change config url_api to https://kavirelectronic.ir/demo/api/
+2018-10-26 10:37:34,ALI,change config presh_key_api to 7WA6FSM6WX9A5DBNTRBB4VD8FJKXV5P9
+2018-10-26 11:02:27,ALI,Update Filed price =>0  ID: 1200767 table:prodect
+2018-10-26 11:02:29,ALI,Update Filed price =>0  ID: 1200768 table:prodect
+2018-10-26 11:02:38,ALI,Update Filed price =>-1  ID: 1200768 table:prodect
+2018-10-26 11:02:43,ALI,Update Filed price =>-1  ID: 1200772 table:prodect
+2018-10-26 11:02:46,ALI,Update Filed price =>0  ID: 1200773 table:prodect
+2018-10-26 11:03:09,ALI,Update Filed price =>-3  ID: 1200768 table:prodect
+2018-10-26 13:06:27,ALI,Update Filed active =>1  ID: 1200767 table:prodect
+2018-10-26 13:09:00,ALI,Update Filed wholesale_price =>0  ID: 1200767 table:prodect
+2018-10-26 13:40:32,ALI,Update Filed price =>1  ID: 1200772 table:prodect
+2018-10-26 15:13:28,::1,Access Denied

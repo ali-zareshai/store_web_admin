@@ -30,4 +30,18 @@ function getALLcss()
         echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"{$dir}bootstrap.rtl.css\">";
         echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"{$dir}bootstrap.rtl.min.css\">";
     }
+
+    echo "
+    <style>
+    th,td,table{
+    direction: rtl;
+    text-align: left;
+    }
+    
+    .card-header{
+    text-align: right;
+    }
+   
+    </style>
+    ";
 }

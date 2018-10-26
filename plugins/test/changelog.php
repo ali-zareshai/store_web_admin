@@ -52,6 +52,9 @@ $webservice = new WebService();
         thead{
             text-align: center;
         }
+        th{
+            text-align: left;
+        }
     </style>
 </head>
 <div class="col-md-12">

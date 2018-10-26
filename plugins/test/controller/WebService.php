@@ -8,19 +8,39 @@ class WebService
     private $api_url;
     private $url_customers;
     private $url_prodect;
+    private $url_combine;
+
     public function __construct()
     {
         $this->api_url   =Config::getConfig("url_api");
         $this->key_presha=Config::getConfig("presh_key_api");
         $this->url_customers=$this->api_url."customers?&ws_key=".$this->key_presha;
         $this->url_prodect  =$this->api_url."products?&ws_key=".$this->key_presha;
+        $this->url_combine  =$this->api_url."product_option_values?&ws_key=".$this->key_presha."&output_format=JSON&display=full&";
+    }
+
+    private function execCurl($url){
+        $ch = curl_init();
+        $timeout = 10;
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HEADER, false);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+        $data = curl_exec($ch);
+        if (curl_error($ch)){
+            $data=curl_error($ch);
+        }
+        curl_close($ch);
+
+        return $data;
     }
 
     public function getAddressProdect(){
         return $this->url_prodect;
     }
 
-    public function Post_Data($service,array $data=null){
+    public function Post_Data($service="",array $data=null){
         if ($service=="customer"){
             $Xml     = $this->getCustomers($data);
             $address =  $this->url_customers;
@@ -66,6 +86,13 @@ class WebService
         $sql="UPDATE `prodect` SET `need_update` = '0';";
         R::exec($sql);
         return "ok";
+    }
+
+    public function getCombines($id){
+        $id = trim($id);
+        $query = $this->url_combine."filter[id]=[$id]";
+        @$respone = json_decode($this->execCurl($query));
+        return @$respone->product_option_values;
     }
 
 
