@@ -75,23 +75,28 @@ $prodect =json_encode($prodect);
 </head>
 <body>
 <div class="col-md-12">
-    <div class="card" style="margin-top: 2%">
-        <h5 class="card-header"><?= Languege::_("action")?></h5>
-        <div class="card-body">
-<!--            <button class="btn btn-primary" id="downdata">--><?//=Languege::_("Download Data")?><!--</button>-->
-            <a class="btn btn-primary" data-fancybox data-type="iframe" data-src="Download.php" href="javascript:;">
+        <a data-toggle="collapse" href="#collapseExample"  aria-expanded="false" aria-controls="collapseExample" class="btn btn-primary col-md-3"><?= Languege::_("action")?></a>
+        <div class="collapse" id="collapseExample">
+        <div class=" card card-body ">
+            <div class="form-inline">
+            <a class="btn btn-primary col-md-2" data-fancybox data-type="iframe" data-src="Download.php" href="javascript:;">
                 <?=Languege::_("Download Data")?>
             </a>
-            <a class="btn btn-info" data-fancybox data-type="iframe" data-src="changelog.php" href="javascript:;">
+            <a class="btn btn-info col-md-2" data-fancybox data-type="iframe" data-src="changelog.php" href="javascript:;">
                 <?=Languege::_("sync")?>
             </a>
+                <input class="btn btn-info col-md-2" type="button" id="exportpdf" value="<?= Languege::_("pdf") ?>">
+                <input class="btn btn-info col-md-2" type="button" id="exportcsv" value="<?= Languege::_("excel") ?>">
+        </div>
+        </div>
+        </div>
+</div>
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-body">
+<div id="example-table"></div>
         </div>
     </div>
-<div>
-    <input class="btn btn-info" type="button" id="exportpdf" value="<?= Languege::_("pdf") ?>">
-    <input class="btn btn-info" type="button" id="exportcsv" value="<?= Languege::_("excel") ?>">
-</div>
-<div id="example-table"></div>
 </div>
 </body>
 <script>
@@ -208,7 +213,12 @@ $prodect =json_encode($prodect);
                     var value = cell.getValue();
                     if(value!=""){
                         var url = "<?=$config['image_prodect']?>"+value[0]+"/"+value[1]+"/"+value[2]+"/"+value[3]+"/"+value+"-small_default.jpg";
-                        return "<img class='infoImage' src='"+url+"' >";
+                        // console.log(url);
+                        var url_large = "<?=$config['image_prodect']?>"+value[0]+"/"+value[1]+"/"+value[2]+"/"+value[3]+"/"+value+"-large_default.jpg";
+
+                        return "<a href='"+url_large+"' data-lightbox='"+value+"' data-title='"+value+"'>" +
+                            "<img class='infoImage' src='"+url+"' >" +
+                            "</a>";
                     }
 
                     }
@@ -228,14 +238,14 @@ $prodect =json_encode($prodect);
                         return "<span>"+value+"<span><span> <?=Languege::_('toman')?>  <span>";
                     }
                 }},
-            {title:"<?= Languege::_("available") ?>", align:"center", field:"available_for_order",formatter:function(cell, formatterParams){
-                    var value = cell.getValue();
-                    if(value=="1"){
-                        return "<img width='15' height='15' src='icon/if_accept.png'/>";
-                    }
-                }},
+            //{title:"<?//= Languege::_("available") ?>//", align:"center", field:"available_for_order",formatter:function(cell, formatterParams){
+            //        var value = cell.getValue();
+            //        if(value=="1"){
+            //            return "<img width='15' height='15' src='icon/if_accept.png'/>";
+            //        }
+            //    }},
             //{title:"<?//= Languege::_("show_price") ?>//", field:"show_price", sorter:"number",editor:"input"},
-            {title:"<?= Languege::_("name") ?>", field:"meta_description", align:"center", headerFilter:"input",editor:"input"},
+            {title:"<?= Languege::_("name") ?>", field:"meta_description", align:"center", headerFilter:"input"},
             {title:"<?= Languege::_("mojodi") ?>", field:"mojodi",width:90, headerFilter:minMaxFilterEditor, headerFilterFunc:minMaxFilterFunction,editor:"number"},
             {title:"<?= Languege::_("update_") ?>", field:"update_"},
             //{title:"<?//= Languege::_("combine") ?>//", field:"combine", align:"center",editor:"input"},

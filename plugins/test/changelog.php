@@ -5,7 +5,7 @@ require_once __DIR__."/controller/WebService.php";
 Security::checkAccess("test");
 
 $webservice = new WebService();
-//var_dump($webservice->getChangeXml());
+//var_dump($webservice->getChangesProdect());
 //die();
 
 
@@ -64,6 +64,7 @@ $webservice = new WebService();
            <table class="table table-hover" style="width: 100%">
                <thead class="thead-dark">
                <th><?= Languege::_("ID") ?></th>
+               <th><?= Languege::_("name") ?></th>
                <th><?= Languege::_("ref") ?></th>
                <th><?= Languege::_("price") ?></th>
                <th><?= Languege::_("kharid") ?></th>
@@ -75,11 +76,17 @@ $webservice = new WebService();
                foreach ($webservice->getChangesProdect() as $prodect){ ?>
                <tr>
                    <td><?= $prodect['id_']?></td>
+                   <td><?= $prodect['meta_description']?></td>
                    <td><?= $prodect['reference']?></td>
                    <td><?= $prodect['price']?></td>
                    <td><?= $prodect['wholesale_price']?></td>
                    <td><?= $prodect['weight']?></td>
-                   <td><?= $prodect['active']?></td>
+                   <td><?php
+                       if ($prodect['active']=="1"){ ?>
+                           <img width='15' height='15' src='icon/if_accept.png'/>
+                       <?php
+                       }
+                       ?></td>
                </tr>
                <?php
                }
